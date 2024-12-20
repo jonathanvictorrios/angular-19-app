@@ -1,1 +1,17 @@
-<app-user></app-user>
+<!-- <app-user></app-user> -->
+<div>
+  <article>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia at facilis
+    iure ut? Excepturi saepe rem beatae delectus ipsum obcaecati placeat.
+    Debitis in itaque odio! Temporibus minima optio deleniti beatae.
+  </article>
+
+
+  @defer (on viewport){ //loading in defear mode to dont loading in the begin , justo when scroll to that part
+    <app-comments></app-comments>
+  } @placeholder { //placeholder is for the reserve the space
+    <p>.</p>
+  } @loading(minimum 1s) { // loading is for show something for a specific time
+    <p>Cargando........</p>
+  }
+</div>
