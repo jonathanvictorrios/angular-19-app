@@ -1,6 +1,6 @@
 <!-- <app-user></app-user> -->
 <div>
-  <article>
+  <article class="text-3xl font-bold underline">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia at facilis
     iure ut? Excepturi saepe rem beatae delectus ipsum obcaecati placeat.
     Debitis in itaque odio! Temporibus minima optio deleniti beatae.
@@ -10,6 +10,12 @@
   @defer{
     <!-- loading in defear mode to dont loading in the begin , justo when scroll to that part -->
     <app-comments></app-comments>
+    <div class="columns-2">
+        <app-games (addSrcImagenEvent)="setSrcImage($event)"></app-games>
+        <!-- @if (srcGameImage !== ''){ -->
+          <img [src]="srcGameImage" alt="no cargo la imagen"/>
+        <!-- } -->
+    </div>
   } @placeholder {
     <!-- placeholder is for the reserve the space -->
     <p>.</p>

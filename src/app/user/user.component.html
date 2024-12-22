@@ -14,7 +14,8 @@
   username="{{username}}"></app-games>
 
   @if (favGame !== ''){
-    <p>Tu juego favorito es {{favGame}}</p>
+    <p>El juego seleccionado es: {{favGame}}</p>
+    <img [src]="getFavorite" alt="">
   }
 </section>
 
