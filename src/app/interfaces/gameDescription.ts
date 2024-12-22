@@ -7,5 +7,6 @@ interface description{
   id:number,
   name:string,
   genre:string,
-  year:number
+  year:number,
+  image:string
 }

@@ -7,3 +7,9 @@ div {
   font-size: 32px;
   margin: 0 auto;
 }
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
