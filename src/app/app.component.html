@@ -12,9 +12,7 @@
     <app-comments></app-comments>
     <div class="grid grid-cols-2 gap-2">
         <app-games (addSrcImagenEvent)="setSrcImage($event)"></app-games>
-        @if (srcGameImage !== ''){
-          <img [src]="srcGameImage" alt="no cargo la imagen"/>
-        }
+          <img *ngIf="srcGameImage !== ''; else messageSelectImagen" [src]="srcGameImage" alt="no cargo la imagen"/>
     </div>
   } @placeholder {
     <!-- placeholder is for the reserve the space -->
@@ -24,3 +22,6 @@
     <p>Cargando........</p>
   }
 </div>
+<ng-template #messageSelectImagen>
+
+</ng-template>
