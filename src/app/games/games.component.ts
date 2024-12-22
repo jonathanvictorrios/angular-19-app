@@ -1,14 +1,15 @@
 import { Component, Input, input, Output, EventEmitter } from '@angular/core';
 import { gameDescription } from '../interfaces/gameDescription';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-games',
-  imports: [],
+  imports: [CommonModule],
   template: `
     <ul>
       <!-- track is like identifier in vuejs -->
       @for (game of games.data; track game.id ){
-      <li (mouseover)="[fav(game.name),showimage(game.image)]">{{ game.name }}</li>
+      <li [class]="activeGame==game.name ? 'text-violet-700' : ''" (mouseover)="[fav(game.name),showimage(game.image),selectGame(game.name)]">{{ game.name }}</li>
       }
 
     </ul>
@@ -17,6 +18,7 @@ import { gameDescription } from '../interfaces/gameDescription';
 })
 export class GamesComponent {
   @Input() username = '';
+  activeGame =  '';
   @Output() addFavoriteEvent = new EventEmitter<string>();
   @Output() addSrcImagenEvent = new EventEmitter<string>();
   fav(gameName: string) {
@@ -25,6 +27,9 @@ export class GamesComponent {
   }
   showimage(srcImage:string){
     this.addSrcImagenEvent.emit(srcImage);
+  }
+  selectGame(gameName:string){
+    this.activeGame = gameName;
   }
   games: gameDescription = {
     data: [

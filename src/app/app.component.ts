@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { CommentsComponent } from './comments/comments.component';
 import { GamesComponent } from './games/games.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { GamesComponent } from './games/games.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  srcGameImage = 'https://www.thevideogamecompany.com/cdn/shop/products/silent-hill-2-sony-playstation-2-ps2-083717200253-cover-art.jpg';
+  srcGameImage = '';
   setSrcImage(srcImage: string) {
     this.srcGameImage = srcImage;
   }

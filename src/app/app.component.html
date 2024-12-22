@@ -10,11 +10,11 @@
   @defer{
     <!-- loading in defear mode to dont loading in the begin , justo when scroll to that part -->
     <app-comments></app-comments>
-    <div class="columns-2">
+    <div class="grid grid-cols-2 gap-2">
         <app-games (addSrcImagenEvent)="setSrcImage($event)"></app-games>
-        <!-- @if (srcGameImage !== ''){ -->
+        @if (srcGameImage !== ''){
           <img [src]="srcGameImage" alt="no cargo la imagen"/>
-        <!-- } -->
+        }
     </div>
   } @placeholder {
     <!-- placeholder is for the reserve the space -->
