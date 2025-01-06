@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
       <li
       *ngFor="let game of games.data"
         [class]="activeGame == game.name ? 'text-violet-700' : ''"
+        class='cursor-pointer'
         (mouseover)="
           [fav(game.name), showimage(game.image), selectGame(game.name)]
         "
